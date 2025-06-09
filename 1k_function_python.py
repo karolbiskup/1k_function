@@ -1530,9 +1530,9 @@ def if_number_exist_sequence(A, B, C):
 This function check that our sequence is increasing
 Function takes 2 arguments:
 A, B - Those arguments speciffy our sequence, an = An + B
-Function return True when sequence is increasing or False where is constant or decreasing
+Function return True when sequence is increasing or False when is constant or decreasing
 """
-def is_increasing_sequence(A, B, C):
+def is_increasing_sequence(A, B):
 
     if A > 0:
         return True
@@ -1541,10 +1541,42 @@ def is_increasing_sequence(A, B, C):
         return False
     
 
+"""
+# 20
+This function check that our sequence is decreasing
+Function takes 2 arguments:
+A, B - Those arguments speciffy our sequence, an = An + B
+Function return True when sequence is decreasing or False when increasing or constant
+"""
+def is_decreasing_sequence(A, B):
 
-        
+    if A < 0:
+
+        return True
+    
+    else:
+
+        return False
 
 
+"""
+# 21
+This function check that our sequence is constant
+Function takes two arguments: 
+
+A, B - Those arguments speciffy our sequence, an = An + B
+Function return True when sequence is constant or False when increasing, decreasing
+"""
+def is_constant_sequence(A, B):
+
+    if A == 0:
+
+        return True
+    
+    else:
+
+        return False
+    
 
 
 
