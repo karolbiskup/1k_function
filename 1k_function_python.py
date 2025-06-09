@@ -1579,8 +1579,102 @@ def is_constant_sequence(A, B):
     
 
 
+"""
+# 22
+This function check that our sequence is: increasing, decreasing, constant
+Function takes 2 arguments:
+A, B - Those arguments speciffy our sequence, an = An + B
+Function return one text on group below:
+INCREASING
+CONSTANT
+DECREASING
+"""
+def check_sequence_up_down_constant(A, B):
+
+    if A > 0:
+
+        return "INCREASING"
+    
+    elif A == 0:
+
+        return "CONSTANT"
+    
+    elif A < 0:
+
+        return "DECREASING"
+    
 
 
 
+"""
+# 23
+This function check that 10 exist or no in our sequence
+Our sequence is defined, it have formula:
+an = 2n + 6
+Function takes 2 arguents:
+begin, end - we search value 10 start from index begin and end to index end
+Function return:
+YES -> when 10 exist
+NO -> when 10 not exist
+"""
+def check_10_exist_in_sequence_from_to(begin, end):
+ 
+    # Our sequence is defined, an = 2n + 6
+    # Our sequence get value 10 for n equal 2
+
+    if (end >= 2) and (begin <= 2):
+
+        return "YES"
+    
+    else:
+
+        return "NO"
 
 
+"""
+# 24
+This function check that number 10 exist or no in our sequence
+Function takes 4 arguments:
+A, B - Those arguments speciffy our sequence, an = An + B
+begin, end - We search value 10 start from index begin and stop on end index
+Function return one of text below:
+YES - If 10 exist in our sequence
+NO - If 10 no exist in our sequence
+"""
+def check_10_exist_in_seq_parametrs_from_to(A, B, begin, end):
+
+    # Formula our sequence is:
+    # an = An + B
+    # (an - B)/A = n
+
+    # I think that letter in code I must "divide" by A so I here check A is equal zero
+    if(A == 0):
+
+        # All term of our sequence have value equal B
+        if((B == 10) and (begin<=end)):
+            
+            return "YES"
+        
+    else:
+
+        # Calculate index for we get value 10
+        index_10 = (10 - B) / A
+
+
+        if( ((10 - B) % A) or (index_10 < 1) ):
+            
+            return "NO"
+        
+        else:
+
+            # In this place exist argument (index_10) in our sequence with give value 10
+            # Look for begin and end
+            if ((index_10 <= end) and (index_10 >= begin)):
+
+                return "YES"
+            
+            else:
+
+                return "NO"
+
+            
