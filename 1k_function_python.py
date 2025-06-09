@@ -1677,4 +1677,59 @@ def check_10_exist_in_seq_parametrs_from_to(A, B, begin, end):
 
                 return "NO"
 
+"""
+# 25
+This function check that number C exist or no in our sequence
+Function takes 4 arguments:
+A, B - Those arguments speciffy our sequence, an = An + B
+C - We want know, that this value exist or no in our sequence
+begin, end - We search our value (C) from index begin to index end
+Function return one of text below:
+YES - When number exist
+NO - When number not exist
+"""          
+def if_number_exist_in_seq_parametrs_from_to(A, B, C, begin, end):
+
+    # Formula of our sequence is:
+    # an = An + B
+    # We must check that C exist or no in our sequence
+    # (C - B)/A = n
+
+    # I think that letter in code we must "divide" by A so in this place
+    # we must analyze what we achive when A equal 0
+    if A == 0:
+
+        # In this case, all term of our sequence have the same value equal B
+        if ((B == C) and (begin <= end)):
+            return "YES"
+        
+        else:
+
+            return "NO"
+        
+    else:
+
+        # In this place A not equal 0
+
+        # Say, we achive value C for what number of index
+        index_C = (C - B)/A
+
+
+        if( ((C - B) % A) or (index_C < 1) ):
+
+            return "NO"
+        
+        else:
+
+            # In this place, in our sequence exist argument(index_C) witch give value C
+            # Look for begin and end
+            if( (index_C <= end) and (index_C >= begin) ):
+                
+                return "YES"
             
+            else:
+
+                return "NO"
+            
+
+
