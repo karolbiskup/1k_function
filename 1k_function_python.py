@@ -1532,7 +1532,7 @@ Function takes 2 arguments:
 A, B - Those arguments speciffy our sequence, an = An + B
 Function return True when sequence is increasing or False where is constant or decreasing
 """
-def is_increasing_sequence(A, B):
+def is_increasing_sequence(A, B, C):
 
     if A > 0:
         return True
