@@ -1731,5 +1731,92 @@ def if_number_exist_in_seq_parametrs_from_to(A, B, C, begin, end):
 
                 return "NO"
             
+# Check sequence is increasing, decreasing, constant (Our term is hold in array)
+# This thing is not strong connect with arithmetic sequence 
+"""
+# 26
+This function check that our term in array is strictly increasing
+Function takes array of our term 
 
+Function return one of text below:
+YES, SEQUENCE IS STRICTLY INCREASING
+NO, SEQUENCE IS NOT STRICTLY INCREASING
+"""
+def check_term_is_strictly_increasing(term_sequence):
+
+    # This loop compare 2 term together
+    # i have value:
+    # 1 -> first iteration (show on second element in array)
+    # len(term_sequence) - 1 -> last iteration (show on last element in array)
+    for i in range(1, len(term_sequence)):
+
+        if(term_sequence[i] > term_sequence[i - 1]):
+            
+            # You still here, does something not stop function
+            if i == len(term_sequence) - 1:
+                return "YES, SEQUENCE IS STRICTLY INCREASING"
+        
+        else:
+
+            # We must check if our sequence is strictly increasing if one compare is not
+            # good this mean that our sequence is not strictly increasing
+            return "NO, SEQUENCE IS NOT STRICTLY INCREASING"
+
+
+"""
+# 27
+This function check that our term is strictly decreasing
+Function takes array of our term
+Function return one of text below:
+YES, THIS SEQUENCE IS STRICTLY DECREASING
+NO, THIS SEQUENCE IS NOT STRICTLY DECREASING
+"""
+def check_term_is_strictly_decreasing(term_sequence):
+
+    # This loop compare together 2 element
+    # i have value:
+    # 1 -> first iteration (show on second element in array)
+    # len(term_sequence) - 1 -> last iteration (show on last element in array)
+    for i in range(1, len(term_sequence)):
+
+        if(term_sequence[i] < term_sequence[i - 1]):
+
+            # You still here, does something not stop work function
+            if ( i == (len(term_sequence) - 1) ):
+                return "YES, THIS SEQUENCE IS STRICTLY DECREASING"
+        
+        else:
+
+            # If our compare is not good, this mean that our sequence is not 
+            # strictly decreasing
+            return "NO, THIS SEQUENCE IS NOT STRICTLY DECREASING"
+
+
+"""
+# 28
+This function check that our sequence is constant
+Function takes array of number
+Function return one of text below:
+SEQUENCE IS CONSTANT
+SEQUENCE IS NOT CONSTANT
+"""
+def check_term_is_constant(term_sequence):
+
+    # i have value:
+    # 1 -> first iteration (show on second element in array)
+    # len(term_sequence) - 1 -> last iteration (show on last element in array)
+    for i in range(1, len(term_sequence)):
+
+        if( term_sequence[i] == term_sequence[i-1] ):
+
+            if ( i == (len(term_sequence) - 1) ):
+
+                # You are still here, does something not stop program
+                return "SEQUENCE IS CONSTANT"
+            
+        else:
+
+            # If our compare is not good, this mean that our sequence is not constant
+            return "SEQUENCE IS NOT CONSTANT"
+        
 
