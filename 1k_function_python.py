@@ -1920,5 +1920,40 @@ def properlly_value_for_index(value, A, B):
 
     return (value - B)/A
 
+# Calculate sum
+"""
+# 32
+This function calculate sum 10 first term in sequence
+Function not take any argument
+Function return sum 10 first term in sequence with have formula: an = 2n + 6
+"""
+def calculate_sum_10_seq_defined():
 
+    # Our sequence is defined
+    # an = 2n + 6
+    a1 = 2 * 1 + 6
+    a10 = 2 * 10 + 6
+
+    sum = (a1 + a10) * 5
+
+    return sum
+
+"""
+# 33
+This function sum N first term of our sequence
+Function take one argument:
+N - This argument show how many first term will be added together
+Function return sum N first term of sequence witch have formula: an = 2n + 8
+"""
+def N_first_term_sequence_is_know(N):
+
+    # Our sequence have formula:
+    # an = 2n + 8
+
+    a1 = 2 * 1 + 8
+    aN = 2 * N + 8
+
+    sum = (a1 + aN) * (N/2)
+
+    return sum
 
