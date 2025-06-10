@@ -1881,6 +1881,9 @@ This function check that our terms is strictly increasing from index begin to in
 Function takes 3 arguments:
 term_array - This is array of our term
 begin, end - We check that our sequence is increasing from index begin to index stop
+Function return one of text below:
+THIS TERM IS INCREASING
+THIS TERM IS NOT INCREASING
 """
 def check_term_is_strictly_increasing_from_to(term_array, begin, end):
 
@@ -1899,4 +1902,23 @@ def check_term_is_strictly_increasing_from_to(term_array, begin, end):
             # If we are in this place this mean that compare is not good so
             # our term is not increasing
             return "THIS TERM IS NOT INCREASING"
+
+# Find Index
+"""
+# 31
+This function find properlly index when we know value in our sequence
+Function takes 3 arguments:
+value - We know this value, find index
+A, B - Those arguments speciffy our sequence, an = An + B
+This function return properlly index
+"""
+def properlly_value_for_index(value, A, B):
+
+    # Formula of our sequence is:
+    # an = An + B
+    # (an - B)/A = n
+
+    return (value - B)/A
+
+
 
