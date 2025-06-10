@@ -1820,3 +1820,51 @@ def check_term_is_constant(term_sequence):
             return "SEQUENCE IS NOT CONSTANT"
         
 
+"""
+# 29
+"""
+def check_trend_sequence(term_sequence):
+
+    value_increasing = 0
+    value_decreasing = 0
+    value_constant = 0
+
+    # i have value:
+    # 1 -> first iteration (show on second element in array)
+    # len(term_sequence) - 1 -> last iteration (show on last element in array)
+    for i in range(1, len(term_sequence)):
+
+        # We use in code 2 variable: value_term, value_before_term
+        value_term = term_sequence[i]
+        value_before_term = term_sequence[i - 1]
+
+        # If our sequence is increasing
+        if(value_term > value_before_term):
+            value_increasing += 1
+
+        # If our sequence is decreasing
+        if(value_term < value_before_term):
+            value_decreasing += 1
+
+        # If our sequence is constant
+        if(value_term == value_before_term):
+            value_constant += 1
+
+    # At first i have value 1, i-1 have value 0
+    # Allways we make len(term_sequence) - 1 compare
+
+    # If we have this trend
+    if(value_increasing == (len(term_sequence) - 1)):
+        return "OUR SEQUENCE IS INCREASING"
+        
+    # If we have this trend
+    if(value_decreasing == (len(term_sequence) - 1)):
+        return "OUR SEQUENCE IS DECREASING"
+        
+    # If we have this trend
+    if(value_constant == (len(term_sequence) - 1)):
+        return "OUR SEQUENCE IS CONSTANT"
+        
+
+my_tab = [2, 2, 2, 2]
+print(check_trend_sequence(my_tab))
