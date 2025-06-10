@@ -1822,6 +1822,12 @@ def check_term_is_constant(term_sequence):
 
 """
 # 29
+This function check trend our term
+Function takes array of term
+Function return one of text below:
+OUR SEQUENCE IS INCREASING
+OUR SEQUENCE IS DECREASING
+OUR SEQUENCE IS CONSTANT
 """
 def check_trend_sequence(term_sequence):
 
@@ -1838,17 +1844,18 @@ def check_trend_sequence(term_sequence):
         value_term = term_sequence[i]
         value_before_term = term_sequence[i - 1]
 
-        # If our sequence is increasing
-        if(value_term > value_before_term):
-            value_increasing += 1
-
-        # If our sequence is decreasing
-        if(value_term < value_before_term):
-            value_decreasing += 1
-
         # If our sequence is constant
         if(value_term == value_before_term):
             value_constant += 1
+
+        # If our sequence is increasing
+        elif(value_term > value_before_term):
+            value_increasing += 1
+
+        # If our sequence is decreasing
+        elif(value_term < value_before_term):
+            value_decreasing += 1
+
 
     # At first i have value 1, i-1 have value 0
     # Allways we make len(term_sequence) - 1 compare
@@ -1858,13 +1865,38 @@ def check_trend_sequence(term_sequence):
         return "OUR SEQUENCE IS INCREASING"
         
     # If we have this trend
-    if(value_decreasing == (len(term_sequence) - 1)):
+    elif(value_decreasing == (len(term_sequence) - 1)):
         return "OUR SEQUENCE IS DECREASING"
         
     # If we have this trend
-    if(value_constant == (len(term_sequence) - 1)):
+    elif(value_constant == (len(term_sequence) - 1)):
         return "OUR SEQUENCE IS CONSTANT"
-        
+    
+    else:
+        return "NOT KNOW"
+    
+"""
+# 30
+This function check that our terms is strictly increasing from index begin to inex stop
+Function takes 3 arguments:
+term_array - This is array of our term
+begin, end - We check that our sequence is increasing from index begin to index stop
+"""
+def check_term_is_strictly_increasing_from_to(term_array, begin, end):
 
-my_tab = [2, 2, 2, 2]
-print(check_trend_sequence(my_tab))
+    # i in this loop take value:
+    # begin -> first iteration (show on properlly element)
+    # end -> last iteration (show on properlly element)
+    for i in range(begin, end+1):
+        if(term_array[i] > term_array[i - 1]):
+
+            # You are still here, does something not stop function.
+            if i == end:
+                return "THIS TERM IS INCREASING"
+            
+        else:
+            
+            # If we are in this place this mean that compare is not good so
+            # our term is not increasing
+            return "THIS TERM IS NOT INCREASING"
+
