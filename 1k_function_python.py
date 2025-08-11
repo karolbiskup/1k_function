@@ -2042,5 +2042,45 @@ def calc_sum_few_terms(A, B, index_start, amount_terms):
     term_start = A*index_start + B 
 
     # If amount_terms equal two, we find term witch have index_start + 1
+    # If amount_terms equeal one, we find term witch have index start
     term_last = A * ( index_start + (amount_terms - 1) ) + B  
 
+
+    # If amount terms equal one we add the same value together and multiply by 0.5
+    sum = (term_start + term_last) * (amount_terms / 2)
+
+    return sum 
+
+
+"""
+# 38
+This function calculate sum of our sequence. Important that we give this function index_stop
+and amount_terms, if amount_terms equal one this mean that only term witch have index stop was
+taken to calculate our sum
+
+Function takes 4 arguments:
+A, B - Those arguments speciffy our sequence, an = An + B
+index_stop, amount_terms - Those arguments speciffy terms witch must be added to calculate our sum
+
+This function return sum of our sequence index_stop, amount_terms                     
+"""
+def calc_sum_few_terms_back(A, B, index_stop, amount_terms):
+
+    term_last = A * index_stop + B 
+
+    # I imagine block
+    # If amount_terms have value 1 term_start have the same value like term_last
+    # If amount_terms have value 2 term_start show on term with index index_stop - 1
+    term_start = A * ( index_stop - (amount_terms - 1) ) + B
+    
+    # If amount_terms have value 1 this mean that the same value will be added and multiply
+    # by 0.5
+    sum = (term_start + term_last) * (amount_terms / 2)
+
+    return sum 
+
+
+"""
+# 39
+This function calculate sum of our sequence 
+"""
