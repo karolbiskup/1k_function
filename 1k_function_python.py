@@ -1943,11 +1943,12 @@ def calculate_sum_10_seq_defined():
 This function sum N first term of our sequence
 Function take one argument:
 N - This argument show how many first term will be added together
+
 Function return sum N first term of sequence witch have formula: an = 2n + 8
 """
-def N_first_term_sequence_is_know(N):
+def calculate_sum_first_N_seq_defined(N):
 
-    # Our sequence have formula:
+    # Our sequence is defined
     # an = 2n + 8
 
     a1 = 2 * 1 + 8
@@ -1956,4 +1957,90 @@ def N_first_term_sequence_is_know(N):
     sum = (a1 + aN) * (N/2)
 
     return sum
+
+
+"""
+# 34
+This function sum 10 first term of our sequence, where we must give A and B
+This function takes two arguments A and B witch define our sequence:
+an = An + B
+
+Function return sum of 10 first term our sequence
+"""
+def calculate_sum_first_10_speciffy_seq(A, B):
+
+    a1 = A*1 + B
+    a10 = A*10 + B
+
+    sum = (a1 + a10) * 5
+
+    return sum 
+
+
+"""
+# 35
+This function sum N first term, where we must give A and B
+Function takes 3 arguments:
+A, B -> Those arguments speciffy our sequence an = An + B
+N -> This arguments speciffy how many first term must be added to count our sum
+
+Function returns sum of N first term
+"""
+def calculate_sum_N_first_term_speciffy_seq(A, B, N):
+
+    # Our sequence have formula:
+    # an = An + B
+
+    a1 = A * 1 + B
+    aN = A * N + B 
+
+    sum = (a1 + aN) * (N/2)
+
+    return sum 
+
+
+# Sum sequence from ... to ...
+"""
+# 36
+# This function calculate sum sequence from index start to index stop
+# Function takes 4 arguments:
+# A, B -> Those arguments speciffy our sequence
+# index_start, index_stop -> Those arguments speciffy range terms will be added together
+
+# Function returns sum of our sequence
+"""
+def sum_sequence_from_to_index(A, B, index_start, index_stop):
+
+    term_start = A*index_start + B
+    term_stop = A* index_stop + B 
+
+    # If I have index -> 2, 3, 4 
+    # I have 3 elements
+    how_many_elements = (index_stop - index_start) + 1
+
+    # What we make if index_stop have the same value like index_start
+    # how_many_elements = 1
+
+    return (term_start + term_stop) * (how_many_elements / 2)
+
+
+"""
+# 37
+This function calculate sum of our sequence in range, we start of index_start and take properlly
+amount of terms. For example if amount_terms equal 1 we take only one term to calculate our sum
+
+Function takes 4 arguments:
+A, B -> Those arguments speciffy our sequence, an = An + B
+index_start -> We use index to speciffy term, we start of this term
+amount_terms -> We use this variable to say how many terms must be added together to calculate 
+                our sum
+
+This function returns sum of our sequence index_start, amount_terms
+"""
+def calc_sum_few_terms(A, B, index_start, amount_terms):
+
+    term_start = A*index_start + B 
+
+    # If amount_terms equal two, we find term witch have index_start + 1
+    term_last = A * ( index_start + (amount_terms - 1) ) + B  
 
